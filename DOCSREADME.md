@@ -4,7 +4,7 @@
 
 ### Documentation
 
-#### A full stack application providing users access to the undelying data and music catalogue of recording artist Matthew Via Music.
+#### A full stack application providing users access to the underlying data and music catalogue of recording artist Matthew Via Music.
 
 <!-- ## [Click here](https://matthewviamusic.com/docs/api) -> API Docs/Interactive Schema -->
 
