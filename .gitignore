@@ -9,7 +9,7 @@
 /coverage
 /.next
 .next/
-/.next
+./.next
 # production
 /build
 /out
