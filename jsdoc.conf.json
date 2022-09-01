@@ -1,0 +1,27 @@
+{
+  "templates": {
+    "default": {
+      "includeDate": false
+    }
+  },
+  "source": {
+    "include": ["components", "pages"],
+    "exclude": [
+      "css",
+      "node_modules",
+      "out",
+      ".next",
+      ".env",
+      ".gitignore",
+      "next.config.json",
+      "postcss.config.js",
+      "README.md",
+      "seed/sql",
+      "seed.sql",
+      "notes.js",
+      "tailwind.config.js"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  }
+}

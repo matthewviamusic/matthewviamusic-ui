@@ -1,0 +1,71 @@
+.rotatorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 70%;
+  margin: 30px auto;
+  gap: 2rem;
+}
+
+/* ROTATING DISC */
+.disc {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.rotator {
+  width: 100%;
+  max-width: 600px;
+  -webkit-animation: logo-spin infinite 20s linear;
+  animation: logo-spin infinite 20s linear;
+  pointer-events: none;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.hole {
+  z-index: 10;
+  position: absolute;
+  background-color: #000;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  opacity: 0.9;
+  border: 8px solid #000;
+}
+
+@-webkit-keyframes logo-spin {
+  from {
+    transform: translateZ(0);
+    transform: rotate(0deg);
+  }
+  to {
+    transform: translateZ(0);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: translateZ(0);
+    transform: rotate(0deg);
+  }
+  to {
+    transform: translateZ(0);
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 780px) {
+  .rotatorWrapper {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+  }
+}

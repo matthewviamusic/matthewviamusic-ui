@@ -1,0 +1,310 @@
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html,
+body {
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  z-index: 1;
+  opacity: 1;
+
+  background-color: #fffb00;
+  background-image: linear-gradient(
+      30deg,
+      #efefec 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #efefec 77.5%,
+      #efefec
+    ),
+    linear-gradient(
+      150deg,
+      #efefec 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #efefec 77.5%,
+      #efefec
+    ),
+    linear-gradient(
+      30deg,
+      #efefec 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #efefec 77.5%,
+      #efefec
+    ),
+    linear-gradient(
+      150deg,
+      #efefec 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #efefec 77.5%,
+      #efefec
+    ),
+    linear-gradient(
+      60deg,
+      #9efddc 25%,
+      transparent 25.5%,
+      transparent 55%,
+      #9efddc 55%,
+      #9efddc
+    ),
+    linear-gradient(
+      60deg,
+      #9efddc 25%,
+      transparent 25.5%,
+      transparent 55%,
+      #9efddc 55%,
+      #9efddc
+    );
+  background-size: 120px 180px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.overlay {
+  width: 100%;
+  /* gsap animation in cardController.js */
+  /* animates height 0% to 100% on load */
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+  /* background-color: #efefec; */
+  opacity: 0.4;
+  background-image: linear-gradient(
+      30deg,
+      #9efddc 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #9efddc 77.5%,
+      #9efddc
+    ),
+    linear-gradient(
+      150deg,
+      #9efddc 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #9efddc 77.5%,
+      #9efddc
+    ),
+    linear-gradient(
+      30deg,
+      #9efddc 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #9efddc 77.5%,
+      #9efddc
+    ),
+    linear-gradient(
+      150deg,
+      #9efddc 5%,
+      transparent 5.5%,
+      transparent 77%,
+      #9efddc 77.5%,
+      #9efddc
+    ),
+    linear-gradient(
+      60deg,
+      #fffb00 25%,
+      transparent 25.5%,
+      transparent 55%,
+      #fffb00 55%,
+      #fffb00
+    ),
+    linear-gradient(
+      60deg,
+      #fffb00 25%,
+      transparent 25.5%,
+      transparent 55%,
+      #fffb00 55%,
+      #fffb00
+    );
+  background-size: 120px 180px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.mvm {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: -200px;
+  margin-left: -2px;
+}
+
+/* CARDS */
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card__face--front {
+  background-color: #f3f3f3;
+}
+
+.card__face--back {
+  background-color: #111 !important;
+  /* background-color: #fafafa !important; */
+  transform: rotateY(-180deg) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transition */
+.transition-effect {
+  opacity: 1;
+  position: absolute;
+  z-index: 100;
+  /* bgCol styled via props */
+  /* background-color: #89f0f1; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transition-effect img {
+  opacity: 0;
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* NAV */
+/* loads after splash component */
+.navCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc((100vh - 125px));
+}
+.nav {
+  visibility: hidden;
+}
+
+/* check usage */
+.app {
+  display: flex;
+  justify-content: center;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+img.scroll {
+  width: 100vw;
+  max-height: 800px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  z-index: 1;
+}
+/* ^^ \check usage ^^ */
+
+/* data table and search */
+.wrapper {
+  width: 95%;
+  max-width: 1600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 10vw;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead,
+th {
+  border: 1px solid none;
+
+  background-color: aliceblue !important;
+  border-bottom: 4px solid #ff3333;
+}
+
+thead button {
+  border: 0;
+  border-radius: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  padding: 0.5em;
+  margin-bottom: 1px;
+}
+
+thead tr .ascending,
+.descending {
+  background-color: #ff3333;
+  color: whitesmoke;
+  width: 100%;
+}
+
+thead button.ascending::before {
+  content: "(a-z) ";
+  display: inline-block;
+  margin-left: 1em;
+}
+
+thead button.descending::before {
+  content: "(z-a) ";
+  display: inline-block;
+  margin-left: 1em;
+}
+
+button {
+  font-size: 10px;
+}
+
+tr {
+  background-color: papayawhip;
+}
+
+td {
+  border: 1px solid aliceblue;
+  padding: 8px;
+  max-width: 180px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 9px;
+}
+
+.centerStuff {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
