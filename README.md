@@ -1,4 +1,4 @@
-# Matthew Via Music
+# Matthew Via Music (UI)
 
 ### A full stack application providing API access to the underlying data and music catalogue of recording artist Matthew Via Music.
 
