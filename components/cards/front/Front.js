@@ -137,10 +137,7 @@ export default function Front({
             }}
           >
             <a href={spotifyUrl} target="_blank">
-              <img
-                src={pxaUrl ? pxaUrl : process.env.NEXT_PUBLIC_API_PXA_DEFAULT}
-                alt="Pixel Art"
-              />
+              <img src={pxaUrl ? pxaUrl : "../pxa.gif"} alt="Pixel Art" />
             </a>
           </div>
         </div>

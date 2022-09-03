@@ -54,7 +54,10 @@ export default function BackAlbumCover({
           }}
         >
           <a href="https://github.com/matthewviamusic" target="_blank">
-            <img src={artistAvatar} alt={artistAvatar} />
+            <img
+              src="https://matthewviamusic.com/images/avatar/mvm.jpg"
+              alt="Matthew Via Music"
+            />
           </a>
         </div>
       </div>

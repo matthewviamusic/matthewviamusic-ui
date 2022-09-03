@@ -30,7 +30,7 @@ export default function Docs() {
               <p className="text-sm mb-2">View Documentation</p>
               <img
                 className="w-[400px]"
-                src="https://mvmdocsimages.olk1.com/func-extractval.png"
+                src="https://matthewviamusic.com/images/docsimages/func-extractval.png"
                 alt="Wireframe track card"
               />
             </a>
@@ -43,7 +43,7 @@ export default function Docs() {
               <p className="text-sm mb-2">View Style Guide</p>
               <img
                 className="w-64"
-                src="https://mvmdocsimages.olk1.com/docs-card-wireframe.png"
+                src="https://matthewviamusic.com/images/docsimages/docs-card-wireframe.png"
                 alt="Wireframe track card"
               />
             </a>

@@ -29,6 +29,8 @@ notes.js
 DEVREADME.md
 /archive
 /archive/*/**
+/images
+/images/*/**
 
 npm-debug.log*
 yarn-debug.log*

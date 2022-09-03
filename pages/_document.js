@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link
           rel="shortcut icon"
-          href="https://easycss.github.io/favicon/favicon.png"
+          href="https://matthewviamusic.com/images/favicon/favicon.ico"
           type="image/x-icon"
         />
       </Head>
