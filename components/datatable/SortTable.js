@@ -43,7 +43,7 @@ const DataTable = props => {
           <tr>
             {tableHeadTitles.map((n, i) => {
               return (
-                <th className="sticky top-[0]" key={i}>
+                <th key={i}>
                   <button
                     type="button"
                     onClick={() => requestSort(`${makeCamelCase(n)}`)}
