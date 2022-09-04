@@ -1,3 +1,4 @@
+import Error from "../components/Error"
 import Loading from "../components/Loading"
 import s from "../css/albums.module.css"
 import { useState, useEffect } from "react"
@@ -5,17 +6,24 @@ import Link from "next/link"
 import axios from "axios"
 
 export default function albums() {
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
   const [musicMetaData, setMusicMetaData] = useState(null)
 
   const loadData = async () => {
-    const musicMetaData = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_TRACKS_URL}`
-    )
+    try {
+      const musicMetaData = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_TRACKS_URL}`
+      )
 
-    setMusicMetaData(musicMetaData.data.reverse())
+      setMusicMetaData(musicMetaData.data.reverse())
 
-    setLoading(false)
+      setIsLoading(false)
+      setHasError(false)
+    } catch (error) {
+      console.log("*** An ERROR has occurred ***", error)
+      setHasError(true)
+    }
   }
 
   useEffect(() => {
@@ -44,19 +52,22 @@ export default function albums() {
 
   return (
     <>
-      <div className="mt-1 centerStuff">
+      <div className="mt-1 text-center centerStuff">
         <Link href="/">
           <a>
             <img className="h-[20px]" src="/home.svg" alt="Matthew Via Music" />
           </a>
         </Link>
+        {/*  */}
       </div>
 
-      <div className={s.rotatorWrapper}>
-        {loading ? (
-          <Loading />
-        ) : (
-          finalResult?.map((x, i) => (
+      {hasError ? (
+        <Error />
+      ) : isLoading ? (
+        <Loading />
+      ) : (
+        <div className={s.rotatorWrapper}>
+          {finalResult?.map((x, i) => (
             <div key={i} className="cursor-pointer">
               <Link href={`/album/${x.albumName.split(" ").join("+")}`}>
                 <a>
@@ -71,9 +82,10 @@ export default function albums() {
                 </a>
               </Link>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+          {/*  */}
+        </div>
+      )}
     </>
   )
 }

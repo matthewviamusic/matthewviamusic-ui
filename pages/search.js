@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
-import Link from "next/link"
-
+import Error from "../components/Error"
 import Loading from "../components/Loading"
 import { getSearch } from "../components/utils/axios_api"
+import SubNav from "../components/SubNav"
 import SearchBox from "../components/search/SearchBox"
 import SearchResultsData from "../components/search/SearchResultsData"
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
   const [tracks_state, setTracks] = useState([])
   const [searchResults_state, setSearchResults] = useState([])
 
@@ -16,34 +17,27 @@ export default function Home() {
       .then(json => {
         setTracks(json)
         setSearchResults(json)
-        setLoading(false)
+        setIsLoading(false)
+        setHasError(false)
       })
       .catch(error => {
-        console.log(error)
-        setLoading(true)
+        console.log("*** An ERROR has occurred ***", error)
+        setHasError(true)
       })
   }, [])
   return (
     <>
       <div className="text-center centerStuff">
-        <div>
-          <p>
-            <Link href="/albums">&uarr; Albums</Link>
-          </p>
-          <p>
-            <Link href="https://matthewviamusic.com/api/tracks">
-              <a target="_blank">API &larr;</a>
-            </Link>
-            <Link href="/datatable">
-              <a>&nbsp;Data Table&nbsp;&rarr;</a>
-            </Link>
-            <Link href="/docs">
-              <a>&nbsp;Docs&nbsp;</a>
-            </Link>
-          </p>
-        </div>
+        <SubNav
+          navTitle1="Data Table"
+          navLink1="/datatable"
+          navTitle2="Docs"
+          navLink2="/docs"
+        />
 
-        {loading ? (
+        {hasError ? (
+          <Error />
+        ) : isLoading ? (
           <Loading />
         ) : (
           <div>

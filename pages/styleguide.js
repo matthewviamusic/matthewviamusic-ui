@@ -1,5 +1,5 @@
 import PageTransition from "../components/utils/PageTransition"
-import Link from "next/link"
+import SubNav from "../components/SubNav"
 import Styleguide from "../components/styleguide/Styleguide"
 
 export default function styleguide() {
@@ -7,22 +7,12 @@ export default function styleguide() {
     <>
       <PageTransition delay={0.1} bgCol={"#FEFB00"} />
       <div className="text-center centerStuff">
-        <div>
-          <p>
-            <Link href="/albums">&uarr; Albums</Link>
-          </p>
-          <p>
-            <Link href="https://matthewviamusic.com/api/tracks">
-              <a target="_blank">API &larr;</a>
-            </Link>
-            <Link href="/datatable">
-              <a>&nbsp;Data Table&nbsp;&rarr;</a>
-            </Link>
-            <Link href="/docs">
-              <a>&nbsp;Docs&nbsp;</a>
-            </Link>
-          </p>
-        </div>
+        <SubNav
+          navTitle1="Data Table"
+          navLink1="/datatable"
+          navTitle2="Docs"
+          navLink2="/docs"
+        />
 
         <Styleguide />
       </div>

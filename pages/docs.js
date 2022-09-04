@@ -1,26 +1,19 @@
 import PageTransition from "../components/utils/PageTransition"
+import SubNav from "../components/SubNav"
 import Link from "next/link"
 export default function Docs() {
   return (
     <>
       <PageTransition delay={0.1} bgCol={"#9EFDDC"} />
-      <div className="text-center">
-        <p>
-          <Link href="/albums">&uarr; Albums</Link>
-        </p>
-        <p>
-          <Link href="https://matthewviamusic.com/api/tracks">
-            <a target="_blank">API &larr;</a>
-          </Link>
-          <Link href="/datatable">
-            <a>&nbsp;Data Table&nbsp;&rarr;</a>
-          </Link>
-          <Link href="/search">
-            <a>&nbsp;Search&nbsp;</a>
-          </Link>
-        </p>
+
+      <div className="text-center centerStuff">
+        <SubNav
+          navTitle1="Data Table"
+          navLink1="/datatable"
+          navTitle2="Search"
+          navLink2="/search"
+        />
       </div>
-      {/*  */}
 
       <div className="flex flex-col items-center justify-center sm:flex-row mt-10 text-center">
         {/*  */}
