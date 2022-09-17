@@ -28,7 +28,7 @@ export default function Front({
           <div className="flex justify-end">
             <div className="mt-2 mr-5">
               <span className="bg-gray-600 p-1 overline tracking-wide font-semibold text-xs text-[#f7f7f7]">
-                {genre}
+                <a href={`/genre/${genre.split(" ").join("+")}`}>{genre}</a>
               </span>
             </div>
           </div>

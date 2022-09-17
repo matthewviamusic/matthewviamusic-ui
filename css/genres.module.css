@@ -1,0 +1,30 @@
+.genre {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+  line-height: 14px;
+  margin-bottom: 14px;
+}
+
+.title {
+  margin: 14px 0;
+  line-height: 20px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  rotate: 1deg;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.title > span{
+  background-color: #FFFB00;
+  padding: 4px;
+}
+.genre_albumArtwork {
+  margin: 5px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
