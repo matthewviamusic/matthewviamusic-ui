@@ -52,6 +52,8 @@ export default function GenreName() {
     el => el.genre === genreName?.split("+").join(" ")
   )
 
+  const result = genrePage.map(el => [el.albumName, el.artworkUrl]).sort()
+
   return (
     <>
       <div className="text-center w-full">
@@ -69,13 +71,12 @@ export default function GenreName() {
           </h1>
 
           <div className={s.genre}>
-            {genrePage.map(x => (
-              <div key={x.albumName}>
-                {/* <p>{x.albumName}</p> */}
-                <a href={`/album/${x.albumName.split(" ").join("+")}`}>
+            {result.map(el => (
+              <div key={el[0]}>
+                <a href={`/album/${el[0].split(" ").join("+")}`}>
                   <img
-                    src={x.artworkUrl}
-                    alt={x.albumName}
+                    src={el[1]}
+                    alt={el[0]}
                     className={s.genre_albumArtwork}
                   />
                 </a>
