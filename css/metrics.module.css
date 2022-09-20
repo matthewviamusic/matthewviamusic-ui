@@ -1,0 +1,79 @@
+.metrics {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3,1fr);
+  gap: 4px;
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+h1.metricsTitle {
+  margin: 14px 0;
+  line-height: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  rotate: 1deg;
+  text-align: center;
+  rotate: 3deg;
+}
+
+h1.metricsTitle>span{
+  background-color: #FFFB00;
+  padding: 7px;
+}
+
+.metrics p{
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  color: #333;
+}
+
+.metrics p>span{
+  border: 10px dashed #FFFB00;
+  line-height: 34px;
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: #9EFDDC;
+  box-shadow: #EFEFEC 0px .5px 1px;
+}
+
+.counter{
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  color: #333;
+  text-shadow: -6px 4px #FFFB0099;
+}
+
+@media (min-width: 1180px){
+  .metrics p>span{
+  border: 20px dashed #FFFB00;
+  height: 350px;
+  width: 350px;
+  font-size: 76px;
+  }
+}
+@media (max-width: 1180px){
+  .metrics p>span{
+  border: 15px dashed #FFFB00;
+  height: 250px;
+  width: 250px;
+  font-size: 56px;
+  }
+}
+@media (max-width: 860px){
+  .metrics p>span{
+  height: 150px;
+  width: 150px;
+  font-size: 38px;
+  }
+}
+@media (max-width: 480px){
+  .metrics{
+    grid-template-columns: repeat(2,1fr);
+    gap: 0px;
+  }
+}

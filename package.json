@@ -9,6 +9,7 @@
     "next": "latest",
     "react": "latest",
     "react-chartjs-2": "^4.2.0",
+    "react-countup": "^6.3.1",
     "react-dom": "latest",
     "resize-observer": "^1.0.4",
     "web-vitals": "^2.1.4"

@@ -33,6 +33,8 @@ export default function Home() {
           navLink1="/datatable"
           navTitle2="Docs"
           navLink2="/docs"
+          navTitle3="Metrics"
+          navLink3="/metrics"
         />
 
         {hasError ? (

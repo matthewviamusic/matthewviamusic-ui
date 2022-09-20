@@ -1,5 +1,5 @@
 import Link from "next/link"
-export default function SubNav({ navTitle1, navTitle2, navLink1, navLink2 }) {
+export default function SubNav({ navTitle1, navTitle2, navTitle3, navLink1, navLink2, navLink3 }) {
   return (
     <>
       <div>
@@ -7,10 +7,9 @@ export default function SubNav({ navTitle1, navTitle2, navLink1, navLink2 }) {
           <Link href="/albums">&uarr; Albums</Link>
         </p>
         <p>
-          <Link href="https://matthewviamusic.com/api/tracks">
-            <a target="_blank">API &larr;</a>
+          <Link href={navLink3}>
+            <a>&nbsp;{navTitle3}&nbsp;&larr;</a>
           </Link>
-          {/*  */}
           <Link href={navLink1}>
             <a>&nbsp;{navTitle1}&nbsp;&rarr;</a>
           </Link>
