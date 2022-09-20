@@ -13,30 +13,38 @@ export default function Nav() {
 @constant {Array} 'data' List of objects containing the navigation items detail.
  */
   const data = [
-    { id: 1, link: "/docs", icon: "/docs", title: "docs" },
-    { id: 2, link: "/albums", icon: "/musicnote", title: "albums" },
-    { id: 3, link: "/search", icon: "/search", title: "search" },
-    { id: 4, link: "/datatable", icon: "/database", title: "data" }
+    {
+      id: 1,
+      link: "https://matthewviamusic.com/api/tracks",
+      target: "_blank",
+      icon: "/bullhorn",
+      title: "API"
+    },
+    { id: 2, link: "/docs", icon: "/docs", title: "docs" },
+    { id: 3, link: "/albums", icon: "/musicnote", title: "albums" },
+    { id: 4, link: "/search", icon: "/search", title: "search" },
+    { id: 5, link: "/datatable", icon: "/database", title: "data" },
+    { id: 6, link: "/metrics", icon: "/puzzle", title: "metrics" }
   ]
   return (
     <>
       <div className="navCenter">
-        <div className="sm:flex w-full sm:justify-center">
+        <div className="lg:flex w-full justify-center">
           {data.map(x => (
             <div
               key={x.id}
-              className="w-full sm:max-w-xs cursor-pointer sm:mx-4 text-xl"
+              className="w-full cursor-pointer lg:mx-4 text-xl"
             >
               <Link href={x.link}>
-                <a>
-                  <div className="cursor-pointer border-1 my-2 bg-yellow-50 p-3 flex space-x-1 justify-between sm:justify-center items-center sm:content-center">
+                <a target={x.target}>
+                  <div className="xl:max-w-[373px] px-6 my-2 p-3 flex space-x-1 justify-between justify-center items-center cursor-pointer border-1 bg-yellow-50">
                     <img
-                      className="h-[30px] pl-4 mr-1"
+                      className="h-[30px]"
                       src={`${x.icon}.svg`}
                       alt={x.icon}
                     />
-                    <div className="pr-6 sm:pr-0">
-                      <p className="text-[15px]">/{x.title}</p>
+                    <div>
+                      <p className="text-[15px] mr-1.5">/{x.title}</p>
                     </div>
                   </div>
                 </a>

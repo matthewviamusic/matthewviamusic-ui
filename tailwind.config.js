@@ -8,12 +8,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        // sm => @media (min-width: 640px) { ... }
+        // md => @media (min-width: 768px) { ... }
         lg: "1100px",
-        // => @media (min-width: 992px) { ... }
+        // => @media (min-width: 1024px) { ... }
         xl: "1430px",
         // => @media (min-width: 1280px) { ... }
         "2xl": "2130px"
-        // => @media (min-width: 1280px) { ... }
+        // => @media (min-width: 1536px) { ... }
       }
     }
   }
