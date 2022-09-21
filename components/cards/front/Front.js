@@ -52,8 +52,8 @@ export default function Front({
           </p>
           <p className="mt-[1.75px] text-slate-400">{artistName}</p>
           <p className="uppercase text-xs mt-1 sm:text-sm tracking-wide">
-            <span className="text-slate-400">{releaseYear}</span> •{" "}
-            <span className="text-slate-700">{albumName}</span>
+            <span className="text-slate-400">{releaseYear}</span>
+            <span className="text-slate-700 ml-1">{albumName}</span>
           </p>
         </div>
         {/*  */}
