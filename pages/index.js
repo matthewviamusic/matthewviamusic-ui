@@ -13,6 +13,7 @@ import Nav from "../components/Nav"
 /**
  * @returns "Clean up the GSAP timeline"
  */
+
 export default function App() {
   /**
    * @constant {string} 'tl' Assigned to a React 'ref' which enables us to run sequenced animations on the underlying DOM elements/CSS classes.
@@ -20,11 +21,15 @@ export default function App() {
   const tl = useRef()
 
   useEffect(() => {
-    tl.current = gsap
-      .timeline()
-      .to(".mvm", { autoAlpha: 1, delay: 1 })
-      .from(".overlay", { delay: 1.3 })
-      .fromTo(".mvm", { scale: 0.8, opacity: 1 }, { opacity: 0, scale: 14.5 })
+    let hasSplashed = sessionStorage.getItem("splashDown")
+    tl.current = gsap.timeline()
+    
+    if(typeof window !== 'undefined' && !hasSplashed){
+      tl.current
+        .to(".mvm", { autoAlpha: 1, delay: 1 })
+        .from(".overlay", { delay: 1.3 })
+        .fromTo(".mvm", { scale: 0.8, opacity: 1 }, { opacity: 0, scale: 14.5, onComplete: () => sessionStorage.setItem("splashDown", true)})
+    }
     tl.current
       .from(
         ".overlay",
@@ -47,15 +52,15 @@ export default function App() {
         },
         "<+=.4"
       )
-      .fromTo(
-        ".cardz",
-        { autoAlpha: 0, scale: 0.85, ease: "expo.inOut" },
-        {
-          scale: 1,
-          autoAlpha: 1
-        },
-        "<-=.6"
-      )
+      // .fromTo(
+      //   ".cardz",
+      //   { autoAlpha: 0, scale: 0.85, ease: "expo.inOut" },
+      //   {
+      //     scale: 1,
+      //     autoAlpha: 1
+      //   },
+      //   "<-=.6"
+      // )
       .to(".nav", {
         autoAlpha: 1,
         ease: "expo.inOut"
