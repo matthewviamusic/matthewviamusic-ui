@@ -1,3 +1,11 @@
+:root{
+  --cyan:#9efddc;
+  --yellow: #fffb00;
+  --grey: #efefec;
+  --cardFrontGrey: #F3F3F3;
+  --svgBlack: #333;
+}
+
 @import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
 
 @tailwind base;
@@ -317,4 +325,13 @@ td {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+/* front fingerprint */
+.finger{
+  background: var(--cyan);
+  height: 47px;
+  width: 47px;
+  border-radius: 50%;
+  border: 3px solid var(--grey);
 }

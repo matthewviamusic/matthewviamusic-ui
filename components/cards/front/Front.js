@@ -36,7 +36,7 @@ export default function Front({
           <div className="h-full flex justify-center items-end -mt-10">
             <a onClick={handleFlip}>
               <img
-                className="cursor-pointer h-[50px]"
+                className="finger cursor-pointer"
                 src="../finger-print.svg"
                 alt="finger-print"
               />
