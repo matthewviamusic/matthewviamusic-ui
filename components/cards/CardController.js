@@ -1,35 +1,43 @@
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Error from "../Error"
 import Loading from "../Loading"
 import CardContainer from "./CardContainer"
 
 export default function CardController() {
   let { query } = useRouter()
 
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
   const [musicMetaData, setMusicMetaData] = useState(null)
   const [musicStatsData, setMusicStatsData] = useState(null)
   const [pxaUrlData, setPxaUrlData] = useState(null)
 
   const loadData = async () => {
-    const musicMetaData = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_TRACKS_URL}`
-    )
-    const musicStatsData = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_STATS_URL}`
-    )
-    const pxaUrlData = await axios.get(`${process.env.NEXT_PUBLIC_API_PXA}`)
+    try {
+      const musicMetaData = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_TRACKS_URL}`
+      )
+      const musicStatsData = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_STATS_URL}`
+      )
+      const pxaUrlData = await axios.get(`${process.env.NEXT_PUBLIC_API_PXA}`)
 
-    const albumTracks = musicMetaData?.data?.filter(
-      x => x.albumName === query?.albumName?.split("+").join(" ")
-    )
+      const albumTracks = musicMetaData?.data?.filter(
+        x => x.albumName === query?.albumName?.split("+").join(" ")
+      )
 
-    setMusicMetaData(albumTracks)
-    setMusicStatsData(musicStatsData.data)
-    setPxaUrlData(pxaUrlData.data)
+      setMusicMetaData(albumTracks)
+      setMusicStatsData(musicStatsData.data)
+      setPxaUrlData(pxaUrlData.data)
 
-    setLoading(false)
+      setIsLoading(false)
+      setHasError(false)
+    } catch (error) {
+      console.log("*** An ERROR has occurred ***", error)
+      setHasError(true)
+    }
   }
 
   useEffect(() => {
@@ -58,7 +66,9 @@ export default function CardController() {
       <div className="my-0 flex align-center justify-center">
         <div className="select-none grid md:m-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 grid-flow-row">
           {/*  */}
-          {loading ? (
+          {hasError ? (
+            <Error />
+          ) : isLoading ? (
             <Loading />
           ) : (
             allData.map(track => (

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import SubNav from "../components/SubNav"
-
 import SortTable from "../components/datatable/SortTable"
 import Error from "../components/Error"
 import Loading from "../components/Loading"
@@ -10,8 +9,8 @@ export default function DataTable() {
   const [tracks, setTracks] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
-  useEffect(() => {
-    const getTracks = async () => {
+
+  const getTracks = async () => {
       try {
         const res = await axios.get(process.env.NEXT_PUBLIC_API_TRACKS_URL)
         setTracks(res.data)
@@ -22,6 +21,8 @@ export default function DataTable() {
         setHasError(true)
       }
     }
+
+  useEffect(() => {
     getTracks()
   }, [])
 

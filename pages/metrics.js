@@ -1,19 +1,32 @@
 import Axios from "axios"
 import { useEffect, useState } from "react"
+import Error from "../components/Error"
+import Loading from "../components/Loading"
 import CountUp from "react-countup"
 import SubNav from "../components/SubNav"
 import s from "../css/metrics.module.css"
 
 export default function Genre() {
 
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
   const [getData, setData] = useState([])
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await Axios.get("https://matthewviamusic.com/api/tracks")
-      setData(res.data)
+  const getTheData = async () => {
+      try {
+        const res = await Axios.get("https://matthewviamusic.com/api/tracks")
+        setData(res.data)
+
+        setIsLoading(false)
+        setHasError(false)
+      } catch (error) {
+        console.log("*** An ERROR has occurred ***", error)
+        setHasError(true)
+      }
     }
-    getData()
+
+  useEffect(() => {
+    getTheData()
   }, [])
   console.clear()
 
@@ -71,7 +84,12 @@ export default function Genre() {
           <h1 className={s.metricsTitle}>
             <span>Metrics</span>
           </h1>
-          <div className={s.metrics}>
+          
+          {hasError ? (
+            <Error />
+          ) : isLoading ? (
+            <Loading />
+          ) : (<div className={s.metrics}>
             <p>
               Tracks
               <span>
@@ -182,6 +200,7 @@ export default function Genre() {
                 /></span>
             </p>
           </div>
+          )}
         </>
       }
     </>
