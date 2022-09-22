@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export default function Front({
   artworkUrl,
   releaseYear,
@@ -61,13 +62,13 @@ export default function Front({
         <div className="flex border-t border-gray-300 text-xs sm:text-sm bg-[#f6f6f6]">
           {/*  */}
           <div className="p-2 flex-2 inline-flex items-center justify-center">
-          <a href={`/search`}>
+          <Link href={`/search`}><a>
             <img
               className="ml-3 h-8 w-8 text-slate-600 fill-current mr-3"
               src="../album.svg"
               alt="album"
             />
-          </a>
+          </a></Link>
             <p className="mr-6 sm:ml-1">
               <span className="text-slate-400 mr-1">Track</span>{" "}
               <span className="text-slate-900 font-bold">{trackNumber}</span>
@@ -81,13 +82,13 @@ export default function Front({
                 {trackDuration.toFixed(2)}
               </span>
             </p>
-            <a href={`/metrics`}>
+           <Link href={`/metrics`}><a>
             <img
               className="h-6 w-6 ml-4 sm:h-8 md:w-8 text-slate-600 mr-0"
               src="../filter.svg"
               alt="filter"
             />
-            </a>
+            </a></Link>
           </div>
           {/*  */}
         </div>
