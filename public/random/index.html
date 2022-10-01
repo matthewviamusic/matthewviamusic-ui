@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://easycss.github.io/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/arrow.css" />
+    <link rel="stylesheet" href="css/body.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/card.css" />
+
+    <title>Matthew Via Music - Get Random Track</title>
+  </head>
+  <body>
+  
+  <div>
+    <a href="/">
+      <img class="back" src="/home.svg" alt="Matthew Via Music" />
+    </a>
+  </div>
+
+    <div class="container">
+      <div id="subContainer" class="subContainer">
+      <div id="cardContainer" class="hideOnLoad">
+        <div id="artworkUrl" class="card card1">
+          <div class="data">
+            <div class="content">
+              <p><span id="trackName"></span></p>
+              <p><span id="albumName"></span></p>
+              <p class="meta">
+                <span id="releaseYear"></span>
+                <span id="genre"></span>
+              </p>
+            </div>
+            <p class="spotify">
+              <a id="spotifyUrl" target="_blank"><span>Listen on Spotify</span></a>
+            </p>
+          </div>
+            <div class="arrow">&uarr;</div>
+        </div>
+      </div>
+      <!--  -->
+      <button id="button" class="click-me btn"><span id="span" class="vibrate click-me">get random track</span></button>
+      <!-- \ #subContainer -->
+      </div>
+      <!-- \container -->
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

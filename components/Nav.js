@@ -18,10 +18,11 @@ export default function Nav() {
   const data = [
     { id: 1, link: apiLink, target: "_blank", icon: "/bullhorn", title: "api", color: colours[0]},
     { id: 2, link: "/docs", icon: "/docs", title: "docs", color: colours[1] },
-    { id: 3, link: "/albums", icon: "/musicnote", title: "albums", color: colours[2] },
-    { id: 4, link: "/search", icon: "/search", title: "search", color: colours[0] },
+    { id: 3, link: "/search", icon: "/search", title: "search", color: colours[2] },
+    { id: 4, link: "/albums", icon: "/musicnote", title: "albums", color: colours[0] },
     { id: 5, link: "/datatable", icon: "/database", title: "datatable", color: colours[1] },
-    { id: 6, link: "/metrics", icon: "/puzzle", title: "metrics", color: colours[2] }
+    { id: 6, link: "/metrics", icon: "/puzzle", title: "metrics", color: colours[2] },
+    { id: 7, link: "/random", icon: "/rocket", title: "random", color: colours[0] }
   ]
   return (
     <>

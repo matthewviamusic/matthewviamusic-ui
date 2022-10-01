@@ -1,0 +1,55 @@
+body {
+  margin-top: 50px;
+  overflow-x: hidden;
+  background-color: var(--yellow);
+  background-image: linear-gradient(
+      30deg,
+      var(--grey) 5%,
+      transparent 5.5%,
+      transparent 77%,
+      var(--grey) 77.5%,
+      var(--grey)
+    ),
+    linear-gradient(
+      150deg,
+      var(--grey) 5%,
+      transparent 5.5%,
+      transparent 77%,
+      var(--grey) 77.5%,
+      var(--grey)
+    ),
+    linear-gradient(
+      30deg,
+      var(--grey) 5%,
+      transparent 5.5%,
+      transparent 77%,
+      var(--grey) 77.5%,
+      var(--grey)
+    ),
+    linear-gradient(
+      150deg,
+      var(--grey) 5%,
+      transparent 5.5%,
+      transparent 77%,
+      var(--grey) 77.5%,
+      var(--grey)
+    ),
+    linear-gradient(
+      60deg,
+      var(--aqua) 25%,
+      transparent 25.5%,
+      transparent 55%,
+      var(--aqua) 55%,
+      var(--aqua)
+    ),
+    linear-gradient(
+      60deg,
+      var(--aqua) 25%,
+      transparent 25.5%,
+      transparent 55%,
+      var(--aqua) 55%,
+      var(--aqua)
+    );
+  background-size: 120px 180px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}

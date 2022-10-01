@@ -1,0 +1,22 @@
+.arrow {
+  font-family: monospace;
+  position: absolute;
+  color: var(--yellow);
+  /* bottom: -50px; */
+  opacity: 0.9;
+  /* transform: translate(-50%, 59%); */
+  text-align: center;
+  transition: all 0.1s ease-out;
+  /* arrow tip */
+  font-size: 70px;
+  bottom: -37px;
+  margin-left: 0px;
+}
+.card1:hover .arrow {
+  color: var(--yellow);
+  bottom: -20px;
+  position: absolute;
+  margin-left: 0px;
+  opacity: 1;
+  transition: all 0.1s ease-in;
+}

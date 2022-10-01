@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back{
+  height: 20px;
+  width: auto;
+}
+.container {
+  margin-left: -16px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3px;
+  margin-top: 4vh;
+}
+
+/* added onclick see app.js */
+
+.subContainer{
+  margin-top: 379px;
+}
+.hideOnLoad {
+  display: none;
+}
+
+@media (max-width: 780px){
+  .container{
+    margin-left: -16px;
+  }  
+}
