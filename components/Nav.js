@@ -22,7 +22,8 @@ export default function Nav() {
     { id: 4, link: "/albums", icon: "/musicnote", title: "albums", color: colours[0] },
     { id: 5, link: "/datatable", icon: "/database", title: "datatable", color: colours[1] },
     { id: 6, link: "/metrics", icon: "/puzzle", title: "metrics", color: colours[2] },
-    { id: 7, link: "/random", icon: "/rocket", title: "random", color: colours[0] }
+    { id: 7, link: "/random", icon: "/rocket", title: "random", color: colours[0] },
+    { id: 8, link: "/dashboard", icon: "/squares", title: "dashboard", color: colours[1] },
   ]
   return (
     <>
@@ -34,7 +35,7 @@ export default function Nav() {
                 <a target={x.target}>
                   <div
                     style={{ background: x.color }}
-                    className="xl:max-w-[373px] px-6 my-2 p-3 flex space-x-1 justify-between justify-center items-center cursor-pointer border-1"
+                    className="xl:max-w-[373px] px-6 my-2 p-3 flex space-x-1 justify-center items-center cursor-pointer border-1"
                   >
                     <img
                       className="h-[30px]"

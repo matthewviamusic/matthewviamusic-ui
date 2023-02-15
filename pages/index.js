@@ -26,8 +26,8 @@ export default function App() {
     
     if(typeof window !== 'undefined' && !hasSplashed){
       tl.current
-        .to(".mvm", { autoAlpha: 1, delay: 1 })
-        .from(".overlay", { delay: 1.3 })
+        .to(".mvm", { autoAlpha: 1, delay: 0 })
+        .from(".overlay", { delay: .1 })
         .fromTo(".mvm", { scale: 0.8, opacity: 1 }, { opacity: 0, scale: 14.5, onComplete: () => sessionStorage.setItem("splashDown", true)})
     }
     tl.current
@@ -36,7 +36,7 @@ export default function App() {
         {
           height: "100%",
           autoAlpha: 1,
-          duration: 1.5,
+          duration: 1.2,
           ease: "power4.inOut"
           // delay: 0.3
         },
@@ -45,7 +45,7 @@ export default function App() {
       .to(
         ".overlay",
         {
-          duration: 1.3,
+          duration: 1,
           autoAlpha: 0.9,
           height: 0,
           ease: "power4.inOut"
@@ -64,7 +64,9 @@ export default function App() {
       .to(".nav", {
         autoAlpha: 1,
         ease: "expo.inOut"
-      })
+      },
+      "<-=.8"
+    )
 
     return () => {
       tl.current.kill()
