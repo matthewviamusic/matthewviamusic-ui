@@ -1,0 +1,8 @@
+{
+  "short_name": "Matthew Via Music",
+  "name": "Matthew Via Music",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
