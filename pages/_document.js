@@ -6,8 +6,7 @@ export default function Document() {
       <Head>
         <link
           rel="shortcut icon"
-          href="https://matthewviamusic.com/images/favicon/favicon.ico"
-          type="image/x-icon"
+          href="https://matthewviamusic.com/images/favicon/apple-touch-icon-precomposed.png"
         />
       </Head>
       <body>
